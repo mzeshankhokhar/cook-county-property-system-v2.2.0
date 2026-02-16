@@ -1,0 +1,856 @@
+/* Property Drawer v2.2.0 - Styles for Dashboard + Drawer Modes
+   These styles complement the enterprise CSS (style.css + bootstrap.min.css).
+   Only property-specific layout rules are defined here.
+
+   SHARED STYLES: Tables, cards, grid layout, images, GIS map composition
+   DASHBOARD MODE: Full-page card grid with header (PIN, bid, nav)
+   DRAWER MODE: Slide-in panel with backdrop, animation, two-row header,
+                bid/overbid inputs, navigation arrows, body scroll lock
+
+   Design tokens (override in your stylesheet):
+     --bg-primary-clr:    Primary brand color (header backgrounds, links)
+     --text-primary-clr:  Default text color
+     --text-secondary-clr: Secondary/muted text
+     --border-clr:        Border color for cards and tables */
+
+/* ═══════════════════════════════════════════
+   SHARED STYLES (both modes)
+   ═══════════════════════════════════════════ */
+
+/* Tables within sections */
+.property-drawer .pd-table {
+  width: 100%;
+  font-size: 12px;
+  border-collapse: collapse;
+}
+.property-drawer .pd-table thead th {
+  font-size: 11px;
+  font-weight: 700;
+  color: #444444;
+  padding: 4px 6px;
+  border-bottom: 2px solid #DDDDDD;
+  text-align: left;
+  white-space: nowrap;
+}
+.property-drawer .pd-table thead th.text-right {
+  text-align: right;
+}
+.property-drawer .pd-table thead th.text-center {
+  text-align: center;
+}
+.property-drawer .pd-table tbody td {
+  padding: 3px 6px;
+  border-bottom: 1px solid #EEEEEE;
+  color: #444444;
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+}
+.property-drawer .pd-table tbody td.text-right {
+  text-align: right;
+}
+.property-drawer .pd-table tbody td.text-center {
+  text-align: center;
+}
+.property-drawer .pd-table tbody td.mono {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 11px;
+}
+.property-drawer .pd-table tbody td.text-danger {
+  color: #dc3545;
+  font-weight: 600;
+}
+.property-drawer .pd-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.property-drawer .pd-table tfoot td {
+  padding: 4px 6px;
+  border-top: 2px solid #DDDDDD;
+  font-weight: 700;
+  color: #444444;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.property-drawer .pd-table tfoot td.text-right {
+  text-align: right;
+}
+.property-drawer .pd-table tfoot td.mono {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Status badges */
+.property-drawer .pd-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 3px;
+  white-space: nowrap;
+  gap: 3px;
+}
+.property-drawer .pd-status.status-paid {
+  background-color: #d1e7dd;
+  color: #0a3622;
+}
+.property-drawer .pd-status.status-due {
+  background-color: #f8d7da;
+  color: #58151c;
+}
+.property-drawer .pd-status.status-pending {
+  background-color: #fff3cd;
+  color: #664d03;
+}
+.property-drawer .pd-status.status-sold {
+  background-color: #dc3545;
+  color: #fff;
+}
+.property-drawer .pd-status.status-no-sale {
+  background-color: #e9ecef;
+  color: #495057;
+}
+.property-drawer .pd-status.status-info {
+  background-color: #cfe2ff;
+  color: #052c65;
+}
+
+/* Header badge */
+.property-drawer .pd-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.property-drawer .pd-badge.badge-count {
+  background-color: rgba(0, 86, 161, 0.1);
+  color: #0056A1;
+}
+
+/* Map images */
+.property-drawer .pd-map-container {
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid #DDDDDD;
+  background-color: #F0F0F0;
+}
+.property-drawer .pd-map-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.property-drawer .pd-map-container .pd-map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.property-drawer .pd-map-container svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.property-drawer .pd-map-label {
+  font-size: 11px;
+  color: #888888;
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+.property-drawer .pd-map-coords {
+  font-size: 11px;
+  color: #888888;
+  margin-top: 4px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.property-drawer .pd-google-maps {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.property-drawer .pd-google-maps .pd-google-map-item {
+  flex: 1;
+  min-width: 100px;
+}
+.property-drawer .pd-google-maps .pd-google-map-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  border: 1px solid #DDDDDD;
+}
+
+/* Loading skeleton */
+.property-drawer .pd-skeleton {
+  background: linear-gradient(90deg, #F0F0F0 25%, #E0E0E0 50%, #F0F0F0 75%);
+  background-size: 200% 100%;
+  animation: pd-shimmer 1.5s infinite;
+  border-radius: 3px;
+  height: 12px;
+}
+.property-drawer .pd-skeleton.h-20 { height: 20px; }
+.property-drawer .pd-skeleton.h-40 { height: 40px; }
+.property-drawer .pd-skeleton.h-120 { height: 120px; }
+.property-drawer .pd-skeleton.w-50 { width: 50%; }
+.property-drawer .pd-skeleton.w-75 { width: 75%; }
+.property-drawer .pd-skeleton.w-100 { width: 100%; }
+@keyframes pd-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Loading indicator */
+.property-drawer .pd-loading-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #888888;
+}
+.property-drawer .pd-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #DDDDDD;
+  border-top-color: #0056A1;
+  border-radius: 50%;
+  animation: pd-spin 0.8s linear infinite;
+}
+@keyframes pd-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error state */
+.property-drawer .pd-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background-color: #f8d7da;
+  border-radius: 3px;
+  color: #58151c;
+  font-size: 12px;
+}
+
+/* Empty state */
+.property-drawer .pd-empty {
+  padding: 8px 0;
+  color: #888888;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Tax sale inline badges row */
+.property-drawer .pd-tax-sale-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+}
+.property-drawer .pd-tax-sale-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+.property-drawer .pd-tax-sale-item .year {
+  font-weight: 700;
+  color: #444;
+}
+
+/* As-of date in header */
+.property-drawer .pd-as-of {
+  font-weight: 400;
+  font-size: 11px;
+  color: #888;
+  margin-left: 4px;
+}
+
+/* Source link arrow */
+.property-drawer .pd-source-link {
+  font-size: 12px;
+  color: #0056A1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.property-drawer .pd-source-link:hover {
+  color: #00437d;
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════
+   DASHBOARD MODE STYLES
+   ═══════════════════════════════════════════ */
+
+.property-drawer .pd-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--text-secondary-clr, #888);
+}
+.property-drawer .pd-dashboard-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.property-drawer .pd-dashboard-pin {
+  font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+  font-weight: 600;
+  color: var(--text-primary-clr, #444);
+}
+.property-drawer .pd-dashboard-last-updated {
+  color: var(--text-secondary-clr, #888);
+}
+
+/* Bid / Overbid fields */
+.pd-bids {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pd-bid-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary-clr, #888);
+  white-space: nowrap;
+  margin: 0;
+}
+.pd-bid-input {
+  width: 72px;
+  height: 26px;
+  padding: 2px 6px;
+  font-size: 12px;
+  border: 1px solid var(--border-clr, #DDD);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--text-primary-clr, #444);
+  outline: none;
+  font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+}
+.pd-bid-input:focus {
+  border-color: var(--bg-primary-clr, #0056A1);
+  box-shadow: 0 0 0 2px rgba(0, 86, 161, 0.15);
+}
+.pd-bids-drawer .pd-bid-input {
+  width: 60px;
+  height: 22px;
+  font-size: 11px;
+}
+
+/* Navigation arrows */
+.pd-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.pd-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--border-clr, #DDD);
+  border-radius: 3px;
+  background: #fff;
+  color: var(--text-primary-clr, #444);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+.pd-nav-btn:hover {
+  background: #f0f0f0;
+  border-color: #bbb;
+}
+.pd-nav-btn:active {
+  background: #e4e4e4;
+}
+.pd-nav-counter {
+  font-size: 12px;
+  color: var(--text-secondary-clr, #888);
+  min-width: 50px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.property-drawer .pd-dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Dashboard card */
+.property-drawer .pd-card {
+  background: #fff;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  min-width: 0;
+  overflow: hidden;
+}
+.property-drawer .pd-card-header {
+  padding: 6px 10px;
+  border-bottom: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+}
+.property-drawer .pd-card-header h6 {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #444;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.property-drawer .pd-card-body {
+  padding: 8px 10px;
+}
+
+/* Row layouts */
+.property-drawer .pd-row {
+  display: flex;
+  gap: 8px;
+}
+.property-drawer .pd-row-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr 1.2fr 1.2fr;
+  gap: 8px;
+}
+.property-drawer .pd-row-tax-sale {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.property-drawer .pd-row-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1.5fr;
+  gap: 8px;
+}
+
+/* Property Info card - dashboard mode */
+.property-drawer .pd-property-image {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #EEEEEE;
+  margin-bottom: 6px;
+}
+.property-drawer .pd-address-block {
+  margin-bottom: 4px;
+}
+.property-drawer .pd-address {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  line-height: 18px;
+}
+.property-drawer .pd-city {
+  font-size: 12px;
+  color: #666;
+  line-height: 16px;
+}
+.property-drawer .pd-meta {
+  font-size: 11px;
+  color: #888;
+  line-height: 16px;
+}
+.property-drawer .pd-mailing-block {
+  border-top: 1px solid #EEE;
+  margin-top: 6px;
+  padding-top: 6px;
+}
+.property-drawer .pd-mailing-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #444;
+  line-height: 16px;
+}
+.property-drawer .pd-mailing-addr {
+  font-size: 11px;
+  color: #666;
+  line-height: 15px;
+}
+
+/* Characteristics card - compact key-value grid */
+.property-drawer .pd-chars-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.property-drawer .pd-char-row {
+  font-size: 12px;
+  line-height: 18px;
+  color: #444;
+}
+.property-drawer .pd-char-label {
+  color: #888;
+  font-weight: 400;
+}
+.property-drawer .pd-char-value {
+  font-weight: 600;
+  color: #333;
+}
+.property-drawer .pd-class-desc {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #888;
+  font-style: italic;
+  line-height: 14px;
+}
+
+/* Loading state for cards */
+.property-drawer .pd-card.loading .pd-card-body {
+  min-height: 50px;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 1199.98px) {
+  .property-drawer .pd-row-top {
+    grid-template-columns: 1fr 1fr 1.5fr;
+  }
+  .property-drawer .pd-row-top .pd-card:nth-child(4),
+  .property-drawer .pd-row-top .pd-card:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+@media (max-width: 767.98px) {
+  .property-drawer .pd-row-top,
+  .property-drawer .pd-row-bottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   DRAWER MODE STYLES
+   ═══════════════════════════════════════════ */
+
+/* Backdrop overlay */
+.pd-drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 9998;
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+.pd-drawer-backdrop.open {
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
+}
+
+/* Drawer panel - slides in from right */
+.drawer-main.property-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 60px);
+  max-width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  background: #F5F5F5;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.drawer-main.property-drawer.open {
+  transform: translateX(0);
+}
+
+/* Drawer header */
+.drawer-main.property-drawer .drawer-header {
+  background-color: var(--bg-primary-clr, #0056A1);
+  color: #fff;
+  padding: 0;
+  flex-shrink: 0;
+}
+.drawer-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  gap: 8px;
+}
+.drawer-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.drawer-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.drawer-header-controls .pd-search-row {
+  margin: 0;
+}
+.drawer-header-controls .pd-search-row .form-control {
+  height: 28px;
+  font-size: 12px;
+  width: 170px;
+}
+.drawer-header-controls .pd-search-row .btn {
+  height: 28px;
+  font-size: 12px;
+  padding: 2px 10px;
+}
+.drawer-close-btn {
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 22px;
+  padding: 0 4px;
+  line-height: 1;
+  opacity: 0.8;
+}
+.drawer-close-btn:hover {
+  opacity: 1;
+}
+.drawer-header-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 12px 6px;
+  background: rgba(0, 0, 0, 0.12);
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.drawer-header-bottom .pd-dashboard-pin {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+.drawer-header-bottom .pd-dashboard-last-updated {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 8px;
+}
+.drawer-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.drawer-header-bottom .pd-bids {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.drawer-header-bottom .pd-bid-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.drawer-header-bottom .pd-bid-input {
+  width: 70px;
+  height: 24px;
+  font-size: 12px;
+  padding: 2px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+.drawer-header-bottom .pd-bid-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.drawer-header-bottom .pd-bid-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.25);
+}
+.drawer-header-bottom .pd-nav-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border-radius: 3px;
+  width: 26px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+.drawer-header-bottom .pd-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+.drawer-header-bottom .pd-nav-counter {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Drawer body */
+.drawer-main.property-drawer .drawer-body {
+  padding: 10px 12px;
+  overflow: hidden;
+  flex: 1;
+}
+.drawer-main.property-drawer .drawer-body .pd-dashboard-grid {
+  gap: 6px;
+}
+.drawer-main.property-drawer .drawer-body .pd-card-body {
+  padding: 6px 8px;
+}
+.drawer-main.property-drawer .drawer-body .pd-card-header {
+  padding: 4px 8px;
+}
+.drawer-main.property-drawer .drawer-body .pd-property-image {
+  height: 70px;
+}
+.drawer-main.property-drawer .drawer-body .pd-google-maps .pd-google-map-item img {
+  max-height: 140px;
+  object-fit: cover;
+}
+.drawer-main.property-drawer .drawer-body .pd-gis-image {
+  max-height: 140px;
+  object-fit: cover;
+}
+@media (max-width: 575.98px) {
+  .drawer-main.property-drawer {
+    width: 100%;
+  }
+}
+
+/* Section cards within the drawer body */
+.property-drawer .pd-section {
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  background: #fff;
+  margin-bottom: 12px;
+}
+.property-drawer .pd-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid #EEEEEE;
+  background-color: #F8F8F8;
+  gap: 8px;
+}
+.property-drawer .pd-section-header h6 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #444;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.property-drawer .pd-section-body {
+  padding: 12px;
+}
+
+/* Property info key-value pairs (drawer mode) */
+.property-drawer .pd-kv {
+  margin-bottom: 8px;
+}
+.property-drawer .pd-kv:last-child {
+  margin-bottom: 0;
+}
+.property-drawer .pd-kv-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #888888;
+  margin-bottom: 2px;
+}
+.property-drawer .pd-kv-value {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  color: #444444;
+}
+.property-drawer .pd-kv-value.large {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.property-drawer .pd-kv-value.mono {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Drawer mailing divider */
+.property-drawer .pd-mailing-divider {
+  border-top: 1px solid #EEEEEE;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+/* Section loading state */
+.property-drawer .pd-section.loading .pd-section-body {
+  min-height: 60px;
+}
+
+/* Drawer info grid */
+.property-drawer .pd-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+@media (max-width: 575.98px) {
+  .property-drawer .pd-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Drawer maps row */
+.property-drawer .pd-maps-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 767.98px) {
+  .property-drawer .pd-maps-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Search bar in drawer header */
+.property-drawer .pd-search-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.property-drawer .pd-search-row .form-control {
+  min-height: 34px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  max-width: 240px;
+}
+.property-drawer .pd-search-row .btn {
+  min-height: 34px;
+  padding: 4px 14px;
+}
+
+/* Doc link in recorder table */
+.property-drawer .pd-doc-link {
+  color: #0056A1;
+  text-decoration: none;
+  font-size: 12px;
+}
+.property-drawer .pd-doc-link:hover {
+  text-decoration: underline;
+  color: #00437d;
+}

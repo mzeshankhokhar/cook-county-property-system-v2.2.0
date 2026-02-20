@@ -6,31 +6,15 @@ namespace CookCountyApi.Controllers;
 
 [ApiController]
 [Route("api/cook")]
-public class CookCountyController : ControllerBase
+public class CookCountyController(
+    ICookCountyProxyService proxyService,
+    ITaxPortalHtmlParser taxPortalParser,
+    IClerkHtmlParser clerkParser,
+    IRecorderHtmlParser recorderParser,
+    IAssessorHtmlParser assessorParser,
+    ITreasurerHtmlParser treasurerParser)
+    : ControllerBase
 {
-    private readonly ICookCountyProxyService _proxyService;
-    private readonly ITaxPortalHtmlParser _taxPortalParser;
-    private readonly IClerkHtmlParser _clerkParser;
-    private readonly IRecorderHtmlParser _recorderParser;
-    private readonly IAssessorHtmlParser _assessorParser;
-    private readonly ITreasurerHtmlParser _treasurerParser;
-
-    public CookCountyController(
-        ICookCountyProxyService proxyService,
-        ITaxPortalHtmlParser taxPortalParser,
-        IClerkHtmlParser clerkParser,
-        IRecorderHtmlParser recorderParser,
-        IAssessorHtmlParser assessorParser,
-        ITreasurerHtmlParser treasurerParser)
-    {
-        _proxyService = proxyService;
-        _taxPortalParser = taxPortalParser;
-        _clerkParser = clerkParser;
-        _recorderParser = recorderParser;
-        _assessorParser = assessorParser;
-        _treasurerParser = treasurerParser;
-    }
-
     /// <summary>
     /// Get ALL property data from all Cook County sources in one unified response
     /// </summary>
@@ -79,21 +63,20 @@ public class CookCountyController : ControllerBase
 
     private async Task<PropertySourceData> FetchTaxPortalData(string pin)
     {
-        var cleanPin = pin.Replace("-", ""); // 16063100220000
         var source = new PropertySourceData
         {
             Source = "Tax Portal",
             // Tax Portal requires POST, so link to Assessor which shows same data
-            SourceUrl = $"https://www.cookcountypropertyinfo.com/pinresults.aspx"
+            SourceUrl = "https://www.cookcountypropertyinfo.com/pinresults.aspx"
         };
 
         try
         {
-            var result = await _proxyService.FetchTaxPortalAsync(pin);
+            var result = await proxyService.FetchTaxPortalAsync(pin);
 
-            if (result is ApiSuccessResponse<TaxPortalData> success && success.Data != null)
+            if (result is ApiSuccessResponse<TaxPortalData> { Data: not null } success)
             {
-                var parsed = _taxPortalParser.ParseTaxPortalHtml(success.Data.Html, pin);
+                var parsed = taxPortalParser.ParseTaxPortalHtml(success.Data.Html, pin);
                 source.Data = parsed;
             }
             else if (result is ApiErrorResponse error)
@@ -115,16 +98,16 @@ public class CookCountyController : ControllerBase
         {
             Source = "County Clerk",
             // Clerk requires POST with token, provide search page
-            SourceUrl = $"https://taxdelinquent.cookcountyclerkil.gov/"
+            SourceUrl = "https://taxdelinquent.cookcountyclerkil.gov/"
         };
 
         try
         {
-            var result = await _proxyService.FetchCountyClerkAsync(pin);
+            var result = await proxyService.FetchCountyClerkAsync(pin);
 
-            if (result is ApiSuccessResponse<TaxSearchData> success && success.Data != null)
+            if (result is ApiSuccessResponse<TaxSearchData> { Data: not null } success)
             {
-                var parsed = _clerkParser.ParseClerkHtml(success.Data.Html, pin);
+                var parsed = clerkParser.ParseClerkHtml(success.Data.Html, pin);
                 source.Data = parsed;
             }
             else if (result is ApiErrorResponse error)
@@ -152,11 +135,11 @@ public class CookCountyController : ControllerBase
 
         try
         {
-            var result = await _proxyService.FetchRecorderAsync(pin);
+            var result = await proxyService.FetchRecorderAsync(pin);
 
-            if (result is ApiSuccessResponse<RecorderData> success && success.Data != null)
+            if (result is ApiSuccessResponse<RecorderData> { Data: not null } success)
             {
-                var parsed = _recorderParser.ParseRecorderHtml(success.Data.Html, pin);
+                var parsed = recorderParser.ParseRecorderHtml(success.Data.Html, pin);
                 source.Data = parsed;
             }
             else if (result is ApiErrorResponse error)
@@ -184,11 +167,11 @@ public class CookCountyController : ControllerBase
 
         try
         {
-            var result = await _proxyService.FetchAssessorAsync(pin);
+            var result = await proxyService.FetchAssessorAsync(pin);
 
-            if (result is ApiSuccessResponse<AssessorData> success && success.Data != null)
+            if (result is ApiSuccessResponse<AssessorData> { Data: not null } success)
             {
-                var parsed = _assessorParser.ParseAssessorHtml(success.Data.Html, pin);
+                var parsed = assessorParser.ParseAssessorHtml(success.Data.Html, pin);
                 source.Data = parsed;
             }
             else if (result is ApiErrorResponse error)
@@ -210,16 +193,16 @@ public class CookCountyController : ControllerBase
         {
             Source = "County Treasurer",
             // Treasurer requires POST with tokens, provide search page
-            SourceUrl = $"https://www.cookcountytreasurer.com/setsearchparameters.aspx"
+            SourceUrl = "https://www.cookcountytreasurer.com/setsearchparameters.aspx"
         };
 
         try
         {
-            var result = await _proxyService.FetchTreasurerAsync(pin);
+            var result = await proxyService.FetchTreasurerAsync(pin);
 
-            if (result is ApiSuccessResponse<TreasurerData> success && success.Data != null)
+            if (result is ApiSuccessResponse<TreasurerData> { Data: not null } success)
             {
-                var parsed = _treasurerParser.ParseTreasurerHtml(success.Data.Html, pin);
+                var parsed = treasurerParser.ParseTreasurerHtml(success.Data.Html, pin);
                 source.Data = parsed;
             }
             else if (result is ApiErrorResponse error)
@@ -242,7 +225,7 @@ public class CookCountyController : ControllerBase
     [ProducesResponseType(typeof(CacheClearResponse), StatusCodes.Status200OK)]
     public IActionResult ClearCache([FromQuery] string? pin = null)
     {
-        _proxyService.ClearCache(pin);
+        proxyService.ClearCache(pin);
         return Ok(new CacheClearResponse
         {
             Message = string.IsNullOrEmpty(pin) ? "All cache cleared" : $"Cache cleared for PIN: {pin}"
@@ -265,7 +248,7 @@ public class HealthController : ControllerBase
         {
             Status = "healthy",
             Timestamp = DateTime.UtcNow.ToString("o"),
-            Endpoints = new[] { "/api/cook/property", "/api/cook/clear-cache" }
+            Endpoints = ["/api/cook/property", "/api/cook/clear-cache"]
         });
     }
 }

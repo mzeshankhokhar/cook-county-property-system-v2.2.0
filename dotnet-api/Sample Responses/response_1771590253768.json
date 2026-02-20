@@ -1,0 +1,630 @@
+{
+  "success": true,
+  "data": {
+    "pin": "32-19-324-024-0000",
+    "fetchedAt": "2026-02-20T12:24:07.3026024Z",
+    "taxPortal": {
+      "source": "Tax Portal",
+      "sourceUrl": "https://www.cookcountypropertyinfo.com/pinresults.aspx",
+      "data": {
+        "pin": "32-19-324-024-0000",
+        "propertyAddress": {
+          "address": "525 ANDOVER ST",
+          "city": "CHICAGO HEIGHTS",
+          "zip": "60411",
+          "township": "BLOOM"
+        },
+        "mailingAddress": {
+          "name": "SHELTON WILLIAMS",
+          "address": "525 ANDOVER AV",
+          "cityStateZip": "CHICAGO HTS, IL 60411",
+          "updateUrl": "https://www.cookcountytreasurer.com/cctoredirect.aspx?pagename=MfUjzziPO3WN/xcdOdj1/d7VMTF8o1gm&pin=4IepCBZ1s/76TGUqkpl+rA=="
+        },
+        "propertyCharacteristics": {
+          "currentAssessedValue": "1,154",
+          "assessmentPass": "(2023 Assessor Certified)",
+          "estimatedPropertyValue": "$11,540",
+          "assessedValueHistory": [
+            {
+              "year": "2023",
+              "value": "1,154"
+            },
+            {
+              "year": "2022",
+              "value": "164"
+            },
+            {
+              "year": "2021",
+              "value": "164"
+            },
+            {
+              "year": "2020",
+              "value": "164"
+            },
+            {
+              "year": "2019",
+              "value": "164"
+            },
+            {
+              "year": "2018",
+              "value": "164"
+            }
+          ],
+          "lotSizeSqFt": "3,298",
+          "buildingSqFt": "",
+          "propertyClass": "2-41",
+          "propertyClassDescription": "Vacant land under common ownership with adjacent residence",
+          "taxRate": "22.695",
+          "taxRateHistory": [
+            {
+              "year": "2024",
+              "rate": "22.695"
+            },
+            {
+              "year": "2023",
+              "rate": "21.591"
+            },
+            {
+              "year": "2022",
+              "rate": "34.925"
+            },
+            {
+              "year": "2021",
+              "rate": "33.126"
+            },
+            {
+              "year": "2020",
+              "rate": "28.766"
+            },
+            {
+              "year": "2019",
+              "rate": "30.133"
+            }
+          ],
+          "taxCode": "12037",
+          "taxingDistrictsUrl": "https://www.cookcountytreasurer.com/cctoredirect.aspx?pagename=G9eepJzSiBLDkRSeMosn0A==&pin=4IepCBZ1s/76TGUqkpl+rA==",
+          "taxRateInfoUrl": "https://www.cookcountyclerk.com/service/tax-extension-and-rates"
+        },
+        "taxCalculator": {
+          "taxYear": "2024",
+          "assessedValue": "1,154",
+          "stateEqualizationFactor": "3.0355",
+          "equalizedAssessedValue": "3,503",
+          "localTaxRate": "22.696 %",
+          "totalTaxBeforeExemptions": "795.05",
+          "homeownerExemption": "0.00",
+          "seniorCitizenExemption": "0.00",
+          "seniorFreezeExemption": "0.00",
+          "totalTaxAfterExemptions": "795.05"
+        },
+        "taxBills": [
+          {
+            "year": "2024",
+            "amount": "$795.05",
+            "status": "Balance Due",
+            "payOnlineAmount": "840.84",
+            "payOnlineUrl": null,
+            "statusMessage": null,
+            "moreInfoUrl": "https://www.cookcountytreasurer.com"
+          },
+          {
+            "year": "2023",
+            "amount": "$751.58",
+            "status": "Balance Due",
+            "payOnlineAmount": "828.35",
+            "payOnlineUrl": null,
+            "statusMessage": null,
+            "moreInfoUrl": "https://www.cookcountytreasurer.com"
+          },
+          {
+            "year": "2022",
+            "amount": "$167.29",
+            "status": "Payment History Available",
+            "payOnlineAmount": null,
+            "payOnlineUrl": null,
+            "statusMessage": null,
+            "moreInfoUrl": "https://www.cookcountytreasurer.com"
+          },
+          {
+            "year": "2021",
+            "amount": "$162.98",
+            "status": "Payment History Available",
+            "payOnlineAmount": null,
+            "payOnlineUrl": null,
+            "statusMessage": null,
+            "moreInfoUrl": "https://www.cookcountytreasurer.com"
+          },
+          {
+            "year": "2020",
+            "amount": "$152.17",
+            "status": "Payment History Available",
+            "payOnlineAmount": null,
+            "payOnlineUrl": null,
+            "statusMessage": null,
+            "moreInfoUrl": "https://www.cookcountytreasurer.com"
+          },
+          {
+            "year": "2019",
+            "amount": "$144.04",
+            "status": "Payment History Available",
+            "payOnlineAmount": null,
+            "payOnlineUrl": null,
+            "statusMessage": null,
+            "moreInfoUrl": "https://www.cookcountytreasurer.com"
+          }
+        ],
+        "exemptions": [
+          {
+            "year": "2024",
+            "exemptionsReceived": 0,
+            "exemptionTypes": [],
+            "moreInfoUrl": "http://www.cookcountyassessor.com/Exemptions/Exemption-Forms.aspx"
+          },
+          {
+            "year": "2023",
+            "exemptionsReceived": 0,
+            "exemptionTypes": [],
+            "moreInfoUrl": "http://www.cookcountyassessor.com/Exemptions/Exemption-Forms.aspx"
+          },
+          {
+            "year": "2022",
+            "exemptionsReceived": 0,
+            "exemptionTypes": [],
+            "moreInfoUrl": "http://www.cookcountyassessor.com/Exemptions/Exemption-Forms.aspx"
+          },
+          {
+            "year": "2021",
+            "exemptionsReceived": 0,
+            "exemptionTypes": [],
+            "moreInfoUrl": "http://www.cookcountyassessor.com/Exemptions/Exemption-Forms.aspx"
+          },
+          {
+            "year": "2020",
+            "exemptionsReceived": 0,
+            "exemptionTypes": [],
+            "moreInfoUrl": "http://www.cookcountyassessor.com/Exemptions/Exemption-Forms.aspx"
+          },
+          {
+            "year": "2019",
+            "exemptionsReceived": 0,
+            "exemptionTypes": [],
+            "moreInfoUrl": "http://www.cookcountyassessor.com/Exemptions/Exemption-Forms.aspx"
+          }
+        ],
+        "appeals": [
+          {
+            "year": "2024",
+            "status": "Not Available",
+            "statusMessage": "The tax billing, exemptions and/or appeals process has not started, or information not available for this tax year.",
+            "filingUrls": [
+              "http://www.cookcountyassessor.com/Appeals/Appeal-Deadlines.aspx",
+              "https://cookcountyboardofreview.com/dates/dates-and-deadlines"
+            ]
+          },
+          {
+            "year": "2023",
+            "status": "Not Available",
+            "statusMessage": "The tax billing, exemptions and/or appeals process has not started, or information not available for this tax year.",
+            "filingUrls": [
+              "http://www.cookcountyassessor.com/Appeals/Appeal-Deadlines.aspx",
+              "https://cookcountyboardofreview.com/dates/dates-and-deadlines"
+            ]
+          },
+          {
+            "year": "2022",
+            "status": "Not Available",
+            "statusMessage": "The tax billing, exemptions and/or appeals process has not started, or information not available for this tax year.",
+            "filingUrls": [
+              "http://www.cookcountyassessor.com/Appeals/Appeal-Deadlines.aspx",
+              "https://cookcountyboardofreview.com/dates/dates-and-deadlines"
+            ]
+          },
+          {
+            "year": "2021",
+            "status": "Not Available",
+            "statusMessage": "The tax billing, exemptions and/or appeals process has not started, or information not available for this tax year.",
+            "filingUrls": [
+              "http://www.cookcountyassessor.com/Appeals/Appeal-Deadlines.aspx",
+              "https://cookcountyboardofreview.com/dates/dates-and-deadlines"
+            ]
+          },
+          {
+            "year": "2020",
+            "status": "Not Accepting",
+            "statusMessage": "Appeals are not being accepted for this tax year.",
+            "filingUrls": [
+              "http://www.cookcountyassessor.com/Appeals/Appeal-Deadlines.aspx",
+              "https://cookcountyboardofreview.com/dates/dates-and-deadlines"
+            ]
+          },
+          {
+            "year": "2019",
+            "status": "Not Accepting",
+            "statusMessage": "Appeals are not being accepted for this tax year.",
+            "filingUrls": [
+              "http://www.cookcountyassessor.com/Appeals/Appeal-Deadlines.aspx",
+              "https://cookcountyboardofreview.com/dates/dates-and-deadlines"
+            ]
+          }
+        ],
+        "refunds": {
+          "status": "No Refund Available",
+          "message": "No Refund Available",
+          "moreInfoUrl": "https://www.cookcountytreasurer.com/cctoredirect.aspx?pagename=J8uCp4Y3c6VxYUwnWJBQUsUmeEr2Pf5toLH2UYZ1vhk=&pin=4IepCBZ1s/76TGUqkpl+rA=="
+        },
+        "taxSaleDelinquencies": [
+          {
+            "year": "2024",
+            "status": "Tax Sale Has Not Occurred",
+            "statusMessage": "Annual Tax Sale has not occurred.",
+            "moreInfoUrl": "https://www.cookcountypropertyinfo.com/taxsale.aspx"
+          },
+          {
+            "year": "2023",
+            "status": "Tax Sale Has Not Occurred",
+            "statusMessage": "Annual Tax Sale has not occurred.",
+            "moreInfoUrl": "https://www.cookcountypropertyinfo.com/taxsale.aspx"
+          },
+          {
+            "year": "2022",
+            "status": "No Tax Sale",
+            "statusMessage": "Taxes not offered at the annual tax sale, or taxes not sold or forfeited at the annual tax sale.",
+            "moreInfoUrl": "https://www.cookcountypropertyinfo.com/taxsale.aspx"
+          },
+          {
+            "year": "2021",
+            "status": "",
+            "statusMessage": null,
+            "moreInfoUrl": "https://www.cookcountypropertyinfo.com/taxsale.aspx"
+          },
+          {
+            "year": "2020",
+            "status": "No Tax Sale",
+            "statusMessage": "Taxes not offered at the annual tax sale, or taxes not sold or forfeited at the annual tax sale.",
+            "moreInfoUrl": "https://www.cookcountypropertyinfo.com/taxsale.aspx"
+          },
+          {
+            "year": "2019",
+            "status": "No Tax Sale",
+            "statusMessage": "Taxes not offered at the annual tax sale, or taxes not sold or forfeited at the annual tax sale.",
+            "moreInfoUrl": "https://www.cookcountypropertyinfo.com/taxsale.aspx"
+          }
+        ],
+        "recordedDocuments": [
+          {
+            "documentNumber": "1335439037",
+            "documentType": "RELEASE",
+            "dateRecorded": "12/20/2013",
+            "moreRecordsUrl": "https://www.cookcountyclerk.com/recordings"
+          },
+          {
+            "documentNumber": "99096082",
+            "documentType": "CORRECTION",
+            "dateRecorded": "01/28/1999",
+            "moreRecordsUrl": "https://www.cookcountyclerk.com/recordings"
+          },
+          {
+            "documentNumber": "99096080",
+            "documentType": "CORRECTION",
+            "dateRecorded": "01/28/1999",
+            "moreRecordsUrl": "https://www.cookcountyclerk.com/recordings"
+          },
+          {
+            "documentNumber": "98755439",
+            "documentType": "ASSIGNMENT",
+            "dateRecorded": "08/25/1998",
+            "moreRecordsUrl": "https://www.cookcountyclerk.com/recordings"
+          },
+          {
+            "documentNumber": "96368093",
+            "documentType": "ASSIGNMENT",
+            "dateRecorded": "05/15/1996",
+            "moreRecordsUrl": "https://www.cookcountyclerk.com/recordings"
+          }
+        ],
+        "propertyImage": {
+          "streetViewUrl": "https://maps.googleapis.com/maps/api/streetview?size=600x400&source=outdoor&location=525%20ANDOVER%20ST,%20CHICAGO%20HEIGHTS,%20IL%2060411-0000&key=AIzaSyAxyVItmcWi4kMpNfdGh4QQWkMCEfPSp2U&signature=demXhW2HVFO0sNenippZLdq9G50=",
+          "streetViewImageBase64": null,
+          "cookViewerUrl": "https://maps.cookcountyil.gov/cookviewer/mapviewer.html?searchType=pin&search=32-19-324-024"
+        },
+        "fetchedAt": "2026-02-20T12:24:10.2851184Z"
+      },
+      "error": null
+    },
+    "clerk": {
+      "source": "County Clerk",
+      "sourceUrl": "https://taxdelinquent.cookcountyclerkil.gov/",
+      "data": {
+        "pin": "32-19-324-024-0000",
+        "dataAsOf": "2/19/2026",
+        "soldTaxInfo": {
+          "soldTaxes": [
+            {
+              "taxSale": "2021 Annual Sale",
+              "taxYearRange": "",
+              "status": "Sold",
+              "statusDocNumber": "",
+              "date": "1/9/2024",
+              "comment": ""
+            }
+          ],
+          "totalBalance1stInstallment": null,
+          "totalBalance2ndInstallment": null
+        },
+        "delinquentTaxInfo": {
+          "delinquentTaxes": [
+            {
+              "taxYear": "2021",
+              "status": "Open",
+              "forfeitDate": "",
+              "firstInstallmentBalance": "$83.69",
+              "secondInstallmentBalance": "$79.29",
+              "type": "",
+              "warrantYear": ""
+            },
+            {
+              "taxYear": "2020",
+              "status": "Open",
+              "forfeitDate": "",
+              "firstInstallmentBalance": "",
+              "secondInstallmentBalance": "$72.95",
+              "type": "",
+              "warrantYear": ""
+            },
+            {
+              "taxYear": "2016",
+              "status": "Open",
+              "forfeitDate": "5/4/2018",
+              "firstInstallmentBalance": "$70.02",
+              "secondInstallmentBalance": "$59.83",
+              "type": "",
+              "warrantYear": ""
+            },
+            {
+              "taxYear": "2015",
+              "status": "Open",
+              "forfeitDate": "",
+              "firstInstallmentBalance": "",
+              "secondInstallmentBalance": "$40.53",
+              "type": "",
+              "warrantYear": ""
+            },
+            {
+              "taxYear": "2013",
+              "status": "Open",
+              "forfeitDate": "8/3/2015",
+              "firstInstallmentBalance": "$59.75",
+              "secondInstallmentBalance": "$52.03",
+              "type": "",
+              "warrantYear": ""
+            },
+            {
+              "taxYear": "Total Tax Balance Due*",
+              "status": "",
+              "forfeitDate": "$213.46",
+              "firstInstallmentBalance": "$304.63",
+              "secondInstallmentBalance": "",
+              "type": "",
+              "warrantYear": null
+            }
+          ]
+        },
+        "fetchedAt": "2026-02-20T12:24:08.6281199Z"
+      },
+      "error": null
+    },
+    "recorder": {
+      "source": "Recorder of Deeds",
+      "sourceUrl": "https://crs.cookcountyclerkil.gov/Search/ResultByPin?id1=32193240240000",
+      "data": {
+        "pin": "32-19-324-024-0000",
+        "propertyInfo": {
+          "address": "525 ANDOVER ST",
+          "city": "CHICAGO HEIGHTS",
+          "zipcode": "60411"
+        },
+        "documents": [
+          {
+            "documentNumber": "1335439037",
+            "dateRecorded": "12/20/2013",
+            "dateExecuted": "12/2/2013",
+            "documentType": "RELEASE",
+            "consideration": null,
+            "viewUrl": "https://crs.cookcountyclerkil.gov/Document/Detail?dId=MzgyNTY0Nzg1&hId=ZGEyZWEzMzU3MTY5N2U2YjhjZDc4ZGNhMjdkZWUyYTgxNzU4NWEyOTMwNGU5NTMzYWYzNzE5OTk1NjRhMzQ2Zg2",
+            "downloadUrl": null,
+            "firstGrantor": null,
+            "firstGrantee": null,
+            "associatedDocNumber": null,
+            "firstPIN": null,
+            "propertyAddress": null
+          },
+          {
+            "documentNumber": "99096082",
+            "dateRecorded": "1/28/1999",
+            "dateExecuted": "10/1/1997",
+            "documentType": "CORRECTION",
+            "consideration": null,
+            "viewUrl": "https://crs.cookcountyclerkil.gov/Document/Detail?dId=MTg0MjMxODg1&hId=ODAxY2JlMzY0ZTg0MDUyOWNkMjJiYWE4YmUyNGY4NDk4MjA1YWE2Zjg2OTk0MjlkMTY0NTdhOTc1MDg2MzdhOA2",
+            "downloadUrl": null,
+            "firstGrantor": null,
+            "firstGrantee": null,
+            "associatedDocNumber": null,
+            "firstPIN": null,
+            "propertyAddress": null
+          },
+          {
+            "documentNumber": "99096080",
+            "dateRecorded": "1/28/1999",
+            "dateExecuted": "11/25/1983",
+            "documentType": "CORRECTION",
+            "consideration": null,
+            "viewUrl": "https://crs.cookcountyclerkil.gov/Document/Detail?dId=MTg0MjMxODY1&hId=MDQwNjNhYWQ0M2NhMjUxNWFlYjFlMmQ2YzMyNTU2YmQyZTk5Y2JkOTRmMWFhYjA4ZTE5MmRhOThlZWRkNzc5ZQ2",
+            "downloadUrl": null,
+            "firstGrantor": null,
+            "firstGrantee": null,
+            "associatedDocNumber": null,
+            "firstPIN": null,
+            "propertyAddress": null
+          },
+          {
+            "documentNumber": "98755439",
+            "dateRecorded": "8/25/1998",
+            "dateExecuted": "10/1/1997",
+            "documentType": "ASSIGNMENT",
+            "consideration": null,
+            "viewUrl": "https://crs.cookcountyclerkil.gov/Document/Detail?dId=MTc4NDUwMDQ1&hId=Y2EwYWRhMWEzNDI3ZmI0ZjhkNTUyZDk3ZDM4NzkyMGNjNDg3ZWFmZDRlNGE4NTA3YzkwMzRiNDJlMzgyYWVlNw2",
+            "downloadUrl": null,
+            "firstGrantor": null,
+            "firstGrantee": null,
+            "associatedDocNumber": null,
+            "firstPIN": null,
+            "propertyAddress": null
+          },
+          {
+            "documentNumber": "96368093",
+            "dateRecorded": "5/15/1996",
+            "dateExecuted": "1/12/1996",
+            "documentType": "ASSIGNMENT",
+            "consideration": null,
+            "viewUrl": "https://crs.cookcountyclerkil.gov/Document/Detail?dId=MTU0NTY2Mzg1&hId=OThkMzJlODA4N2VkMjEzYmQ3YmYwMjQ0NDc2MzAwMTg2YmYxOWE1NzljMGVkYjdlMDFkYTFjMzk5NTk5NTgwOQ2",
+            "downloadUrl": null,
+            "firstGrantor": null,
+            "firstGrantee": null,
+            "associatedDocNumber": null,
+            "firstPIN": null,
+            "propertyAddress": null
+          }
+        ],
+        "totalDocuments": 5,
+        "fetchedAt": "2026-02-20T12:24:09.4003452Z"
+      },
+      "error": null
+    },
+    "assessor": {
+      "source": "Assessor's Office",
+      "sourceUrl": "https://www.cookcountyassessoril.gov/pin/32193240240000",
+      "data": {
+        "pin": "32-19-324-024-0000",
+        "propertyInfo": {
+          "pin": "32-19-324-024-0000",
+          "propertyAddress": "525 ANDOVER ST",
+          "city": "CHICAGO HEIGHTS",
+          "zip": null,
+          "township": "Bloom",
+          "neighborhood": "84",
+          "taxCode": "12037",
+          "propertyClassification": "241",
+          "landSquareFootage": "3,298",
+          "nextReassessment": "2026"
+        },
+        "valuationInfo": {
+          "currentAssessedValue": "$1,154",
+          "priorAssessedValue": "$1,154",
+          "currentMarketValue": "$11,540",
+          "priorMarketValue": "$11,540",
+          "currentLandValue": "$1,154",
+          "priorLandValue": "$1,154",
+          "currentBuildingValue": "",
+          "priorBuildingValue": "",
+          "marketValue": null,
+          "assessmentLevel": null,
+          "propertyClass": null,
+          "propertyClassDescription": null
+        },
+        "buildingInfo": {
+          "description": "Vacant land under common ownership with adjacent residence",
+          "residenceType": "N/A",
+          "use": "N/A",
+          "apartments": "N/A",
+          "exteriorConstruction": "N/A",
+          "fullBaths": "0",
+          "halfBaths": "0",
+          "basement": null,
+          "attic": null,
+          "centralAir": "No",
+          "fireplaces": "0",
+          "garageType": null,
+          "age": "0",
+          "squareFootage": "**",
+          "assessmentPhase": "Assessor Valuation",
+          "yearBuilt": null,
+          "buildingSquareFeet": null,
+          "stories": null,
+          "rooms": null,
+          "bedrooms": null,
+          "bathrooms": null,
+          "garage": null,
+          "roofMaterial": null
+        },
+        "landInfo": {
+          "squareFootage": "3,298",
+          "landSquareFeet": null,
+          "landUse": null,
+          "topography": null
+        },
+        "appealHistory": [],
+        "exemptionHistory": [
+          {
+            "year": "2024",
+            "taxYear": null,
+            "exemptionType": null,
+            "amount": null,
+            "homeowner": "N/A",
+            "senior": "N/A",
+            "seniorFreeze": "N/A",
+            "disabledPersons": "N/A",
+            "disabledVeterans": "N/A"
+          }
+        ],
+        "fetchedAt": "2026-02-20T12:24:10.5913364Z"
+      },
+      "error": null
+    },
+    "treasurer": {
+      "source": "County Treasurer",
+      "sourceUrl": "https://www.cookcountytreasurer.com/setsearchparameters.aspx",
+      "data": {
+        "pin": "32-19-324-024-0000",
+        "propertyInfo": {
+          "address": "525 ANDOVER ST,  CHICAGO HEIGHTS,  IL 60411-0000",
+          "owner": "SHELTON WILLIAMS",
+          "taxpayerName": "SHELTON WILLIAMS",
+          "volume": "014"
+        },
+        "taxBills": [
+          {
+            "taxYear": "2023",
+            "totalAmount": "$751.58",
+            "amountPaid": null,
+            "amountDue": "$828.35",
+            "firstInstallmentDue": null,
+            "secondInstallmentDue": null,
+            "status": "Balance Due"
+          },
+          {
+            "taxYear": "2024",
+            "totalAmount": "$795.05",
+            "amountPaid": null,
+            "amountDue": "$840.84",
+            "firstInstallmentDue": null,
+            "secondInstallmentDue": null,
+            "status": "Balance Due"
+          }
+        ],
+        "paymentSummary": {
+          "totalBilled": "$1,546.63",
+          "totalPaid": null,
+          "totalDue": "$1,669.19",
+          "lastPaymentDate": null,
+          "lastPaymentAmount": null,
+          "totalDebt": "$3,196",
+          "propertyValue": "$11,540",
+          "debtPercent": "27.7%"
+        },
+        "redirectUrl": null,
+        "fetchedAt": "2026-02-20T12:24:13.7234919Z"
+      },
+      "error": null
+    }
+  }
+}

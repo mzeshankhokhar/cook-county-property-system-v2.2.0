@@ -407,10 +407,14 @@ public class TaxPortalHtmlParser : ITaxPortalHtmlParser
 
         if (imgNode != null || cookViewerNode != null)
         {
+            var streetViewUrl = imgNode?.GetAttributeValue("src", null);
+            var cookViewerUrl = cookViewerNode?.GetAttributeValue("href", null);
+
             return new PropertyImageInfo
             {
-                StreetViewUrl = imgNode?.GetAttributeValue("src", null),
-                CookViewerUrl = cookViewerNode?.GetAttributeValue("href", null)
+                // Decode HTML entities like &amp; to &
+                StreetViewUrl = streetViewUrl != null ? WebUtility.HtmlDecode(streetViewUrl) : null,
+                CookViewerUrl = cookViewerUrl != null ? WebUtility.HtmlDecode(cookViewerUrl) : null
             };
         }
 
@@ -427,7 +431,9 @@ public class TaxPortalHtmlParser : ITaxPortalHtmlParser
     private string? GetLinkHref(HtmlDocument doc, string id)
     {
         var node = doc.DocumentNode.SelectSingleNode($"//a[@id='{id}']");
-        return node?.GetAttributeValue("href", null);
+        var href = node?.GetAttributeValue("href", null);
+        // Decode HTML entities like &amp; to &
+        return href != null ? WebUtility.HtmlDecode(href) : null;
     }
 
     private string CleanText(string text)

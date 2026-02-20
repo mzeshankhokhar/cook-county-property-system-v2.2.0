@@ -120,7 +120,7 @@ public class TaxBillEntry
 
 public class TaxSaleSection
 {
-    public List<TaxSaleEntry> Entries { get; set; } = new();
+    public List<TaxSaleEntry> Entries { get; set; }
 }
 
 public class TaxSaleEntry
@@ -368,4 +368,242 @@ public class PropertyImageInfo
     public string? StreetViewUrl { get; set; }
     public string? StreetViewImageBase64 { get; set; }
     public string? CookViewerUrl { get; set; }
+}
+
+// Clerk Full Data Models
+public class ClerkFullData
+{
+    public string Pin { get; set; } = string.Empty;
+    public string? DataAsOf { get; set; }
+    public ClerkSoldTaxInfo? SoldTaxInfo { get; set; }
+    public ClerkDelinquentTaxInfo? DelinquentTaxInfo { get; set; }
+    public string FetchedAt { get; set; } = string.Empty;
+}
+
+public class ClerkSoldTaxInfo
+{
+    public List<ClerkSoldTaxDetail> SoldTaxes { get; set; } = new();
+    public string? TotalBalance1stInstallment { get; set; }
+    public string? TotalBalance2ndInstallment { get; set; }
+}
+
+public class ClerkSoldTaxDetail
+{
+    public string? TaxSale { get; set; }
+    public string? TaxYearRange { get; set; }
+    public string? Status { get; set; }
+    public string? StatusDocNumber { get; set; }
+    public string? Date { get; set; }
+    public string? Comment { get; set; }
+}
+
+public class ClerkDelinquentTaxInfo
+{
+    public List<ClerkDelinquentTaxDetail> DelinquentTaxes { get; set; } = new();
+}
+
+public class ClerkDelinquentTaxDetail
+{
+    public string? TaxYear { get; set; }
+    public string? Status { get; set; }
+    public string? ForfeitDate { get; set; }
+    public string? FirstInstallmentBalance { get; set; }
+    public string? SecondInstallmentBalance { get; set; }
+    public string? Type { get; set; }
+    public string? WarrantYear { get; set; }
+}
+
+// Recorder Full Data Models
+public class RecorderFullData
+{
+    public string Pin { get; set; } = string.Empty;
+    public RecorderPropertyInfo? PropertyInfo { get; set; }
+    public List<RecorderDocumentFull> Documents { get; set; } = new();
+    public int TotalDocuments { get; set; }
+    public string FetchedAt { get; set; } = string.Empty;
+}
+
+public class RecorderPropertyInfo
+{
+    public string? Address { get; set; }
+    public string? City { get; set; }
+    public string? Zipcode { get; set; }
+}
+
+public class RecorderDocumentFull
+{
+    public string? DocumentNumber { get; set; }
+    public string? DateRecorded { get; set; }
+    public string? DateExecuted { get; set; }
+    public string? DocumentType { get; set; }
+    public string? Consideration { get; set; }
+    public string? ViewUrl { get; set; }
+    public string? DownloadUrl { get; set; }
+    public string? FirstGrantor { get; set; }
+    public string? FirstGrantee { get; set; }
+    public string? AssociatedDocNumber { get; set; }
+    public string? FirstPIN { get; set; }
+    public string? PropertyAddress { get; set; }
+}
+
+// Assessor Full Data Models
+public class AssessorFullData
+{
+    public string Pin { get; set; } = string.Empty;
+    public AssessorPropertyInfo? PropertyInfo { get; set; }
+    public AssessorValuationInfo? ValuationInfo { get; set; }
+    public AssessorBuildingInfo? BuildingInfo { get; set; }
+    public AssessorLandInfo? LandInfo { get; set; }
+    public List<AssessorAppealHistory> AppealHistory { get; set; } = new();
+    public List<AssessorExemptionHistory> ExemptionHistory { get; set; } = new();
+    public string FetchedAt { get; set; } = string.Empty;
+}
+
+public class AssessorPropertyInfo
+{
+    public string? Pin { get; set; }
+    public string? PropertyAddress { get; set; }
+    public string? City { get; set; }
+    public string? Zip { get; set; }
+    public string? Township { get; set; }
+    public string? Neighborhood { get; set; }
+    public string? TaxCode { get; set; }
+    public string? PropertyClassification { get; set; }
+    public string? LandSquareFootage { get; set; }
+    public string? NextReassessment { get; set; }
+}
+
+public class AssessorValuationInfo
+{
+    public string? CurrentAssessedValue { get; set; }
+    public string? PriorAssessedValue { get; set; }
+    public string? CurrentMarketValue { get; set; }
+    public string? PriorMarketValue { get; set; }
+    public string? CurrentLandValue { get; set; }
+    public string? PriorLandValue { get; set; }
+    public string? CurrentBuildingValue { get; set; }
+    public string? PriorBuildingValue { get; set; }
+    public string? MarketValue { get; set; }
+    public string? AssessmentLevel { get; set; }
+    public string? PropertyClass { get; set; }
+    public string? PropertyClassDescription { get; set; }
+}
+
+public class AssessorBuildingInfo
+{
+    public string? Description { get; set; }
+    public string? ResidenceType { get; set; }
+    public string? Use { get; set; }
+    public string? Apartments { get; set; }
+    public string? ExteriorConstruction { get; set; }
+    public string? FullBaths { get; set; }
+    public string? HalfBaths { get; set; }
+    public string? Basement { get; set; }
+    public string? Attic { get; set; }
+    public string? CentralAir { get; set; }
+    public string? Fireplaces { get; set; }
+    public string? GarageType { get; set; }
+    public string? Age { get; set; }
+    public string? SquareFootage { get; set; }
+    public string? AssessmentPhase { get; set; }
+    public string? YearBuilt { get; set; }
+    public string? BuildingSquareFeet { get; set; }
+    public string? Stories { get; set; }
+    public string? Rooms { get; set; }
+    public string? Bedrooms { get; set; }
+    public string? Bathrooms { get; set; }
+    public string? Garage { get; set; }
+    public string? RoofMaterial { get; set; }
+}
+
+public class AssessorLandInfo
+{
+    public string? SquareFootage { get; set; }
+    public string? LandSquareFeet { get; set; }
+    public string? LandUse { get; set; }
+    public string? Topography { get; set; }
+}
+
+public class AssessorAppealHistory
+{
+    public string? Year { get; set; }
+    public string? TaxYear { get; set; }
+    public string? AppealType { get; set; }
+    public string? Status { get; set; }
+    public string? Result { get; set; }
+}
+
+public class AssessorExemptionHistory
+{
+    public string? Year { get; set; }
+    public string? TaxYear { get; set; }
+    public string? ExemptionType { get; set; }
+    public string? Amount { get; set; }
+    public string? Homeowner { get; set; }
+    public string? Senior { get; set; }
+    public string? SeniorFreeze { get; set; }
+    public string? DisabledPersons { get; set; }
+    public string? DisabledVeterans { get; set; }
+}
+
+// Treasurer Full Data Models
+public class TreasurerFullData
+{
+    public string Pin { get; set; } = string.Empty;
+    public TreasurerPropertyInfo? PropertyInfo { get; set; }
+    public List<TreasurerTaxBill> TaxBills { get; set; } = new();
+    public TreasurerPaymentSummary? PaymentSummary { get; set; }
+    public string? RedirectUrl { get; set; }
+    public string FetchedAt { get; set; } = string.Empty;
+}
+
+public class TreasurerPropertyInfo
+{
+    public string? Address { get; set; }
+    public string? Owner { get; set; }
+    public string? TaxpayerName { get; set; }
+    public string? Volume { get; set; } // Added
+}
+
+public class TreasurerTaxBill
+{
+    public string? TaxYear { get; set; }
+    public string? TotalAmount { get; set; }
+    public string? AmountPaid { get; set; }
+    public string? AmountDue { get; set; }
+    public string? FirstInstallmentDue { get; set; }
+    public string? SecondInstallmentDue { get; set; }
+    public string? Status { get; set; }
+}
+
+public class TreasurerPaymentSummary
+{
+    public string? TotalBilled { get; set; }
+    public string? TotalPaid { get; set; }
+    public string? TotalDue { get; set; }
+    public string? LastPaymentDate { get; set; }
+    public string? LastPaymentAmount { get; set; }
+    public string? TotalDebt { get; set; } // Added - Total Taxing District Debt
+    public string? PropertyValue { get; set; } // Added
+    public string? DebtPercent { get; set; } // Added - Debt % to Property Value
+}
+
+// Unified Property Response - ALL data in one response
+public class UnifiedPropertyResponse
+{
+    public string Pin { get; set; } = string.Empty;
+    public DateTime FetchedAt { get; set; } = DateTime.UtcNow;
+    public PropertySourceData? TaxPortal { get; set; }
+    public PropertySourceData? Clerk { get; set; }
+    public PropertySourceData? Recorder { get; set; }
+    public PropertySourceData? Assessor { get; set; }
+    public PropertySourceData? Treasurer { get; set; }
+}
+
+public class PropertySourceData
+{
+    public string Source { get; set; } = string.Empty;
+    public string SourceUrl { get; set; } = string.Empty;
+    public object? Data { get; set; }
+    public string? Error { get; set; }
 }

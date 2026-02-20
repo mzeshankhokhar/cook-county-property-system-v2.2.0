@@ -9,7 +9,6 @@ namespace CookCountyApi.Services;
 
 public interface IPropertySummaryService
 {
-    Task<object> GetPropertySummaryAsync(string pin);
     Task<object> GetTaxPortalDataAsync(string pin);
     Task<object> GetClerkDataAsync(string pin);
     Task<object> GetRecorderDataAsync(string pin);
@@ -36,84 +35,6 @@ public class PropertySummaryService : IPropertySummaryService
 
     private static bool ValidatePin(string pin) => !string.IsNullOrEmpty(pin) && PinRegex.IsMatch(pin);
     private static ApiErrorResponse Error(string message, string code) => new() { Error = message, Code = code };
-
-    public async Task<object> GetPropertySummaryAsync(string pin)
-    {
-        if (!ValidatePin(pin))
-        {
-            return Error("Invalid or missing PIN. Format: XX-XX-XXX-XXX-XXXX", "INVALID_PIN");
-        }
-
-        var cacheKey = $"summary_{pin}";
-        if (_cache.TryGetValue(cacheKey, out PropertySummaryData? cached) && cached != null)
-        {
-            cached.FetchedAt = DateTime.UtcNow.ToString("o");
-            return new ApiSuccessResponse<PropertySummaryData> { Data = cached };
-        }
-
-        var overallSw = System.Diagnostics.Stopwatch.StartNew();
-
-        var summary = new PropertySummaryData
-        {
-            Pin = pin,
-            FetchedAt = DateTime.UtcNow.ToString("o"),
-            Errors = new Dictionary<string, string>()
-        };
-
-        var taxPortalTask = TimedFetch(() => SafeFetch(() => _proxyService.FetchTaxPortalAsync(pin), "taxPortal"), "TaxPortal");
-        var clerkTask = TimedFetch(() => SafeFetch(() => _proxyService.FetchCountyClerkAsync(pin), "countyClerk"), "CountyClerk");
-        var recorderTask = TimedFetch(() => SafeFetch(() => _proxyService.FetchRecorderAsync(pin), "recorder"), "Recorder");
-        var cookViewerTask = TimedFetch(() => SafeFetch(() => FetchCookViewerMapAsync(pin), "cookViewer"), "CookViewer");
-
-        var streetViewContinuation = taxPortalTask.ContinueWith(async t =>
-        {
-            var (taxPortalResult, taxPortalError) = t.Result;
-            if (taxPortalResult != null)
-            {
-                var svUrl = ParseTaxPortalResult(taxPortalResult, summary);
-                if (svUrl != null && summary.PropertyImageBase64 == null)
-                {
-                    var svSw = System.Diagnostics.Stopwatch.StartNew();
-                    var image = await FetchStreetViewImageAsync(svUrl);
-                    svSw.Stop();
-                    _logger.LogInformation("PERF: StreetView fetch completed in {Elapsed}ms", svSw.ElapsedMilliseconds);
-                    return image;
-                }
-            }
-            else if (taxPortalError != null)
-            {
-                summary.Errors["taxPortal"] = taxPortalError;
-            }
-            return (string?)null;
-        }, TaskScheduler.Default).Unwrap();
-
-        await Task.WhenAll(streetViewContinuation, clerkTask, recorderTask, cookViewerTask);
-
-        var streetViewImage = await streetViewContinuation;
-        if (streetViewImage != null && summary.PropertyImageBase64 == null)
-            summary.PropertyImageBase64 = streetViewImage;
-
-        var (clerkResult, clerkError) = await clerkTask;
-        var (recorderResult, recorderError) = await recorderTask;
-        var (cookViewerResult, cookViewerError) = await cookViewerTask;
-
-        if (clerkResult != null) ParseClerkResult(clerkResult, summary);
-        else if (clerkError != null) summary.Errors["countyClerk"] = clerkError;
-
-        if (recorderResult != null) ParseRecorderResult(recorderResult, summary);
-        else if (recorderError != null) summary.Errors["recorder"] = recorderError;
-
-        if (cookViewerResult is CookViewerSection mapData) summary.CookViewerMap = mapData;
-        else if (cookViewerError != null) summary.Errors["cookViewer"] = cookViewerError;
-        else summary.Errors["cookViewer"] = "Failed to fetch GIS map";
-
-        overallSw.Stop();
-        _logger.LogInformation("PERF: Total property summary for {Pin} completed in {Elapsed}ms", pin, overallSw.ElapsedMilliseconds);
-
-        _cache.Set(cacheKey, summary, CacheDuration);
-
-        return new ApiSuccessResponse<PropertySummaryData> { Data = summary };
-    }
 
     public async Task<object> GetTaxPortalDataAsync(string pin)
     {

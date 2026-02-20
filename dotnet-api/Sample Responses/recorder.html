@@ -1,0 +1,606 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>Property Records Search | Clerk's Recordings System</title>
+    <noscript>
+
+        <meta http-equiv="refresh" content="0;URL=http://crs.cookcountyclerkil.gov/Home/EnableJavascript" />
+
+    </noscript>
+
+    <script src="/Scripts/popper.js" type="f35da23e560f97f9f4c011f3-text/javascript"></script>
+    <script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1" type="f35da23e560f97f9f4c011f3-text/javascript"></script>
+
+    <script src="/bundles/jquery?v=8Oos0avDZyPg-cbyVzvkIfERIE1DGSe3sRQdCSYrgEQ1" type="f35da23e560f97f9f4c011f3-text/javascript"></script>
+
+
+    <script src="/Scripts/bootstrap.js" type="f35da23e560f97f9f4c011f3-text/javascript"></script>
+
+
+
+    <link href="/Content/css?v=rsU2Eji0u9P2WvZEOnL1IuAZ4thNyibej24hJDWdkAY1" rel="stylesheet" />
+
+
+
+
+
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    <script src="/bundles/maskedinput?v=IndHTEQMh70Ra3yP5TZNrwDp50M1KbiN0kpoXmd4k_01" type="f35da23e560f97f9f4c011f3-text/javascript"></script>
+
+
+
+
+
+    <script src="/Scripts/jquery.maskedinput-1.4.1.js" type="f35da23e560f97f9f4c011f3-text/javascript"></script>
+
+
+
+    <link href="/Content/jquery-ui.css" rel="stylesheet" />
+    <link rel="icon" href="https://www.cookcountyclerkil.gov/themes/custom/clerk/cookcountyclerk.ico" />
+
+    <link href="/Content/Site.css?v=1" rel="stylesheet" />
+    <script type="f35da23e560f97f9f4c011f3-text/javascript" src="/Scripts/jquery-ui.js"></script>
+
+
+
+
+
+
+    <script type="f35da23e560f97f9f4c011f3-text/javascript">
+        $(document).ready(function () {
+            $('.date').mask("99/99/9999");
+            //$('.phone_with_ddd').mask('000-000-0000');
+            $('.zip').mask('99999');
+
+
+        });
+        function clearForm(form) {
+            var $f = $(form);
+            var $f = $f.find(':input').not(':button, :submit, :reset, :hidden');
+            $f.val('').attr('value', '').removeAttr('checked').removeAttr('selected');
+
+        }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SM56R5RNE" type="f35da23e560f97f9f4c011f3-text/javascript"></script>
+    <script type="f35da23e560f97f9f4c011f3-text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-1SM56R5RNE');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SM56R5RNE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-1SM56R5RNE');
+    </script>-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+</head>
+<body>
+
+
+    <div class="bg-light container">
+        <div class="mRow">
+            <div class="Column" style="width:8%;">
+                <div class="nav-clerk-logo-link">
+                    <a href="/Search" title="Home">
+                        <img src="/Images/seal.png" alt="Home" />
+                    </a>
+                </div>
+            </div>
+            <div class="Column p-0 m-0 pt-3" style="vertical-align:top;">
+                <div class="text-end" id="cartDisplay">
+                    <div class="shoppingCart ms-2">
+                        <a href="/Cart" class="no-textdecoration" id="lnkCart">
+                            <span>0</span>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="font-weight-boldOld text-uppercase float-left" style="font-size:12px;">Recordings</div>
+
+                <div class="smallFont text-uppercase float-left">
+                    Cook County Clerk's Office
+                </div>
+
+                <hr class="w-100 float-left p-0 mt-0 mb-0" />
+
+                <div class="float-left">
+                    <span class="appTitle small"><small></small></span>
+
+                    <div class="text-end">
+
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <div class="container-fluid ps-0">
+                                <div class="ms-auto">
+                                    <button class="navbar-toggler btn btn-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon1"><i class="fa fa-bars fa-lg" style="background-color:#337AB7;color:white; "></i></span>
+                                    </button>
+                                </div>
+                                <div class="collapse navbar-collapse collapse w-100 order-3 dual-collapse2 text-end" id="navbarSupportedContent">
+                                    <ul class="navbar-nav ms-auto" style="font-size :15px;">
+                                        <li class="nav-item text-start">
+
+                                            <a href="/Search" class="nav-link menuActiveLink"><i class="fa fa-search"></i> Search</a>
+
+                                        </li>
+
+                                        <li class="nav-item text-start">
+                                            <a href="/Public" class="nav-link "><i class="fa fa-commenting-o"></i> Property Fraud Alert</a>
+                                        </li>
+                                        <li class="nav-item text-start">
+                                            <a href="/MailTracking?returnUrl=%2FSearch%2FResultByPin%3Fid1%3D01011200060000" class="nav-link "><i class="fa fa-envelope-o"></i> Mail Tracking</a>
+
+                                        </li>
+                                        <li class="nav-item text-start">
+                                            <a href="/ChangeRequest" class="nav-link "><i class="fa fa-table"></i> Indexing Corrections</a>
+                                        </li>
+                                        <li class="nav-item text-start">
+                                            <a href="/Order/Search?column=OrderDate&amp;direction=desc" class="nav-link "><i class="fa fa-table"></i> Orders</a>
+                                        </li>
+                                        <li class="nav-item text-start">
+                                            <a href="/Account/Login?returnUrl=%2FSearch%2FResultByPin%3Fid1%3D01011200060000" class="nav-link "><i class="fa fa-sign-in"></i> Account</a>
+
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </nav>
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+    <div class="container">
+        <div class="row ">
+            <div class="breadcrumb container m-0 p-0">
+                <p class="float-right m-0">
+
+
+                    <text>Search Results - Documents</text>
+
+                </p>
+            </div>
+            <div class="bg-white">
+
+
+
+
+
+            </div>
+
+            <div class="container mt-1">
+
+                <div class="row container-box" style="padding:5px 20px;" role="main">
+
+
+                    <script src="/Scripts/Custom.js" type="f35da23e560f97f9f4c011f3-text/javascript"></script>
+
+                    <form action="/Cart/AddItem" id="__AjaxAntiForgeryForm" method="post">
+                        <input name="__RequestVerificationToken" type="hidden" value="1TsknEtvHKLcEwfLlAuZqXOVp-FVnOpgaie4Gqw3MK8eyv4uhUk-cOijAGdneVOs0xhc69nCwiQ2rCr76u1hRdM_kNM1" /><div class="validation-summary-valid text-danger" data-valmsg-summary="true">
+                            <ul>
+                                <li style="display:none"></li>
+                            </ul>
+                        </div>    <div class="row mt-2">
+                            <div class="col-md-6">
+                                <strong><a href="javascript: window.history.back();"> <i class="fa fa-arrow-circle-left fa-lg" style="color:black;"></i> Back</a></strong>
+
+
+                            </div>
+                        </div>
+                        <div id="result">
+                            <fieldset class="mt-1">
+                                <legend class="border-bottom">PIN & Address</legend>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <label>PIN:</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span>01-01-120-006-0000</span>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label>Address:</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span>111 W RUSSELL ST</span>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="row border-bottom">
+                                    <div class="col-md-1">
+                                        <label>City:</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span>BARRINGTON</span>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label>Zipcode:</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span>60010</span>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="row mb-2 mt-2">
+                                <div class="col-md-6">
+                                    Total Documents : <span class="text-big-and-bold">7</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="fw-bold">Click the boxes to select your documents before adding to the cart.</span><br />
+                            </div>
+                            <div class="row mb-1">
+                                <div class="col-md-2 pt-2 productlist">
+                                    <a href="1" id="btnAddDoc" class="1 CartItemButton" title="Select your documents"> <i class="fa fa-shopping-cart" style="color:lightblue;"></i> Buy Documents</a>
+                                </div>
+                                <div class="col-md-3 pt-2 productlist">
+                                    <a href="2" id="btnAddData" class="3 CartItemButton" title="Select your documents"> <i class="fa fa-shopping-cart" style="color:lightblue;"></i> Buy Certified Documents</a>
+                                </div>
+                                <div class="col-md-3 pt-2 productlist">
+                                    <a href="3" id="btnAddData" class="3 CartItemButton" title="Select your documents"> <i class="fa fa-shopping-cart" style="color:lightblue;"></i> Buy Search Result (No Images)</a>
+                                </div>
+
+
+
+
+
+                            </div>
+
+
+                            <div class="table-responsive">
+                                <div id="totalSelected"></div>
+                                <table class="table table-hover table-responsive tblfmt">
+                                    <thead>
+                                        <tr>
+                                            <td scope="col" class="align-middle"><input aria-label="select all" id="selectAll" name="selectAll" title="Select All" type="checkbox" value="true" /><input name="selectAll" type="hidden" value="false" /></td>
+                                            <th scope="col" class="align-middle text-center">
+                                                <span>View Doc</span>
+                                            </th>
+
+                                            <th scope="col"><a href='/Search/SortResultByPin?id1=01011200060000&column=AlphaDocNumber&direction=asc' class='searchresult'> Doc Number</a></th>
+                                            <th scope="col" class="text-center">
+                                                <a href='/Search/SortResultByPin?id1=01011200060000&column=DateRecorfded&direction=asc' class='searchresult'> Doc Recorded</a>
+                                            </th>
+                                            <th scope="col" class="text-center">
+                                                <a href='/Search/SortResultByPin?id1=01011200060000&column=DateExecuted&direction=asc' class='searchresult'> Doc Executed</a>
+                                            </th>
+                                            <th scope="col">
+                                                <a href='/Search/SortResultByPin?id1=01011200060000&column=DocTypeDescription&direction=asc' class='searchresult'> Doc Type</a>
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="align-middle"> <input aria-label="Doc ID" class="docitem" name="37938505" type="checkbox" value="true" /><input name="37938505" type="hidden" value="false" /></td>
+                                            <td class="align-middle text-center">
+                                                <a href="/Document/Detail?dId=Mzc5Mzg1MDU1&amp;hId=MGFhY2QxMDA2N2E1NDljYTI4ZGM0NjNlYzVkZDM5YjhhNjIwY2MyZGE5ODVjMDA2OWJiYzA1ODI3ZjhhMGZlNw2" style="display:block;" title="View">View</a>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>1321357082</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>8/1/2013</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>7/31/2013</span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>RELEASE</span>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle"> <input aria-label="Doc ID" class="docitem" name="24751098" type="checkbox" value="true" /><input name="24751098" type="hidden" value="false" /></td>
+                                            <td class="align-middle text-center">
+                                                <a href="/Document/Detail?dId=MjQ3NTEwOTg1&amp;hId=NDJhZTBlOWQ4MmQ5ZTVmNWU0NDg3MmJjZTMzNDI1MmYxODc4MDlhNDQxNzIxYjFmNDZmZjUyMzcwNWEzZmExYg2" style="display:block;" title="View">View</a>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>0318449219</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>7/3/2003</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>6/27/2003</span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>RELEASE</span>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle"> <input aria-label="Doc ID" class="docitem" name="24713062" type="checkbox" value="true" /><input name="24713062" type="hidden" value="false" /></td>
+                                            <td class="align-middle text-center">
+                                                <a href="/Document/Detail?dId=MjQ3MTMwNjI1&amp;hId=YjhhNTUyOTIxZjZkYmQzNmRhYWRmNTQ1ZjdiZmJjOTk4ZDA2NjFhZWQ5OGJiMDdkYmEzZmMxNThmMzBiMTA0NA2" style="display:block;" title="View">View</a>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>0318101390</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>6/30/2003</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>6/12/2003</span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>MORTGAGE</span>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle"> <input aria-label="Doc ID" class="docitem" name="11892931" type="checkbox" value="true" /><input name="11892931" type="hidden" value="false" /></td>
+                                            <td class="align-middle text-center">
+                                                <a href="/Document/Detail?dId=MTE4OTI5MzE1&amp;hId=MTlkMGViMWFlYTdkYTNjMWNmYzQ2ZDAxNDZlZDViY2UzNDQxOGE2YWUyMjYyMjhmMGE3NTIyYWRjMWQyMzYxMQ2" style="display:block;" title="View">View</a>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>92895331</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>11/30/1992</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>11/27/1992</span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>ASSIGNMENT</span>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle"> <input aria-label="Doc ID" class="docitem" name="11892930" type="checkbox" value="true" /><input name="11892930" type="hidden" value="false" /></td>
+                                            <td class="align-middle text-center">
+                                                <a href="/Document/Detail?dId=MTE4OTI5MzA1&amp;hId=ZDQzYjIzM2NmZjA4NjkxMGNjNjYxODI0NzZiOWFlODMxMGJhNDNkMTZkYzllMTcwODY5ZTQxMDY3YmI3MWQ3Mg2" style="display:block;" title="View">View</a>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>92895330</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>11/30/1992</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>11/27/1992</span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>MORTGAGE</span>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle"> <input aria-label="Doc ID" class="docitem" name="11892929" type="checkbox" value="true" /><input name="11892929" type="hidden" value="false" /></td>
+                                            <td class="align-middle text-center">
+                                                <a href="/Document/Detail?dId=MTE4OTI5Mjk1&amp;hId=ZTBkMDhkNmJmZTUyYjYzYzFiYjM3YWJhMjBkOWI3ZGIxOWIwNGQ4NWI2ZjEyMmU4ZmFhNGUxOWZhOTNkNWE4YQ2" style="display:block;" title="View">View</a>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>92895329</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>11/30/1992</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>11/27/1992</span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>WARRANTY DEED</span>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="align-middle"> <input aria-label="Doc ID" class="docitem" name="11892928" type="checkbox" value="true" /><input name="11892928" type="hidden" value="false" /></td>
+                                            <td class="align-middle text-center">
+                                                <a href="/Document/Detail?dId=MTE4OTI5Mjg1&amp;hId=N2FmMGE3OTdkZjRmMGNkOGVjNGQxMzE2ZDg1M2I0YzgxM2UyZmVlMmZlNWYwM2E1ZTYzY2IwMmY3ZWUxNzljMA2" style="display:block;" title="View">View</a>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>92895328</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>11/30/1992</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <span>1/3/1962</span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>CERTIFICATE OF TITLE</span>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br />
+                                <p class="text-start small mark">
+                                    <b> Please Note: </b> Annexations, Condominium declarations, Dedications, Easements, Highway plats, Monuments, Plats, Vacations/Dedications, and Real estate transfer declarations are not available for purchase on our website. If you would like a copy
+                                    of these document types, you may purchase them at our <a target="_blank" href="https://www.cookcountyclerkil.gov/about/locations/downtown-chicago-recordings">downtown office</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                    <script type="f35da23e560f97f9f4c011f3-text/javascript">
+                        $(document).ready(function () {
+                            var totalSelected = 0;
+                            var $dialog = $('<div class="modal fade" id="modaldiag" tabindex="-1" role="dialog" data-bs-backdrop="static"><div class="modal-dialog modal-dialog-centered justify-content-center" role = "document"><span class="fa fa-spinner fa-spin fa-3x"></span></div></div>');
+
+                              $(document).on('click', '#selectAll', function (e) {
+                                $('input:checkbox').not(this).prop('checked', this.checked);
+                                $("#totalSelected").empty();
+                                  totalSelected = 0;
+                                  $("table > tbody > tr").each(function () {
+                                      $(this).removeClass("table-success");
+                                  });
+                                if (this.checked) {
+                                    $('input[type=checkbox][class=docitem]').each(function () {
+                                        if (this.checked) {
+                                            var arr = {};
+                                            totalSelected = totalSelected + 1;
+                                            $("#totalSelected").html('<span>' + totalSelected + ' Selected <span>'); // <input type="hidden" name="Selecteditem[' + index + ']" value="' + docId + '"/>');
+                                        }
+                                    });
+                                    $("table > tbody > tr").each(function () {
+                                        $(this).addClass("table-success");
+                                    });
+                                }
+                            });
+
+
+                            $(document).on('click', 'input[type=checkbox][class=docitem]', function (e) {
+                                $("#totalSelected").empty();
+                                if (this.checked) {
+                                    totalSelected = totalSelected + 1;
+                                    $("#totalSelected").html('<span>' + totalSelected + ' Selected <span>');
+                                    $(this).closest('tr').addClass("table-success");
+                                }
+                                else {
+                                    $(this).closest('tr').removeClass("table-success");
+                                    totalSelected = totalSelected - 1;
+                                    if (totalSelected <= 0) {
+                                        $("#totalSelected").empty();
+                                    }
+                                    else {
+                                        $("#totalSelected").html('<span>' + totalSelected + ' Selected <span>');
+                                    }
+                                }
+                            });
+
+                            $(document).on('click', '#btnAddDoc, #btnAddData,  #btnAddCert, #btnAllData', function (e) {
+
+                                    //debugger;
+                                    if (totalSelected > 0) {
+                                        $dialog.modal('show');
+                                        var obj = $(this).attr('href');
+                                        var all = "";
+                                        if ($(this).attr('id') == "btnAllData") {
+                                            all = "all";
+                                        }
+                                        $dialog.on('shown.bs.modal', function (e) {
+                                            var url = "/Cart/AddItem";
+                                            loadData(obj, all, url, $dialog);
+
+                                            $('#selectAll').prop('checked', false);
+                                            $("#totalSelected").empty();
+                                            $('input[type=checkbox][class=docitem]').prop('checked', false);
+                                            $("table > tbody > tr").each(function () {
+                                                $(this).removeClass("table-success");
+                                                totalSelected = 0;
+                                            });
+
+                                        });
+                                        $dialog.modal('hide');
+
+                                }
+                                    else {
+                                        alert("Select your documents before adding to the cart.");
+                                    }
+                                    e.preventDefault();
+                                    return false;
+                                });
+
+
+                            $(document).on('click', '.searchresult', function (e) {
+                                $("#result").empty();
+
+                                var href = $(this).attr('href');
+                                var result = GetParam(href);
+
+
+                                var url = "/search/SortResultByPin";
+
+                                $.ajax({
+                                    type: "GET",
+                                    url: url,
+                                    data: { id1: result.id1, sr: result.sr,  column: result.column, direction: result.direction, page: result.page },
+                                    success: function (data) {
+                                        $("#result").html(data);
+                                    }
+                                });
+                                e.preventDefault();
+                                return false;
+
+                            });
+
+                            $(document).on('click', '#Paging a[href]', function (e) {
+
+                                var href = $(this).attr('href');
+                                var result = GetParam(href);
+
+                                var url = "/search/SortResultByPin";
+                                $.ajax({
+                                    type: "GET",
+                                    url:url,
+                                    data: { id1: result.id1, sr: result.sr, column: result.column, direction: result.direction, page: result.page },
+                                    success: function (data) {
+                                        $("#result").html(data);
+                                    }
+                                });
+
+                                e.preventDefault();
+                                return false;
+                            });
+                            function GetParam(href) {
+                                var result = {};
+                                var pars = href.split("?")[1].split("&");
+
+                                for (var i = 0; i < pars.length; i++) {
+                                    var tmp = pars[i].split("=");
+                                    result[tmp[0]] = tmp[1];
+                                }
+                                return result;
+                            }
+                        });
+
+                    </script>
+
+
+                </div>
+            </div>
+        </div>
+        <hr />
+        <footer style="margin-top:10px;">
+
+            <div class="footerLeft">
+                <p>&copy; Copyright 2026 Cook County Clerk's Office. All Rights Reserved.</p>
+
+            </div>
+            <div class="footerRight">
+                <p class="cookCounty"><a href="https://www.cookcountyclerkil.gov/recordings/search-recordings" target="_blank" class="cookCountyLink" title="Cook County Website">Go To Cook County Clerk's Website</a></p>
+            </div>
+            <div class="clear">
+            </div>
+        </footer>
+    </div>
+
+    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="f35da23e560f97f9f4c011f3-|49" defer></script>
+</body>
+
+
+</html>

@@ -7,11 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Sample Responses\assessor.html" />
+    <None Remove="Sample Responses\clerktaxdeliquent.html" />
+    <None Remove="Sample Responses\recorder.html" />
+    <None Remove="Sample Responses\taxPortal.html" />
+    <None Remove="Sample Responses\treasurer.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.12.4" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.5" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.2" />
     <PackageReference Include="Microsoft.Playwright" Version="1.40.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Sample Responses\" />
   </ItemGroup>
 
 </Project>

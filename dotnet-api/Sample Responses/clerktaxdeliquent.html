@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Delinquent - Search - Index</title>
+    <link href="/Content/css?v=m-ZOGgP50oXJisLXhh3HWql1UB2XjM820g-HVuD7nC01" rel="stylesheet"/>
+
+    <link href="/Content/fontawesome?v=3iEv8vqPidB6TVfgNOGrLoJr-SPH_mV3YwpggEk2_ao1" rel="stylesheet"/>
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1" type="a58fdb0a91ee2e33243cc09e-text/javascript"></script>
+
+    
+
+    <style>
+        .no-results {
+            display: none;
+        }
+
+        @media print {
+
+            body, html {
+                margin-top: 0px;
+                padding-top: 0px;
+            }
+
+            .no-print, .no-print * {
+                display: none !important;
+            }
+
+            .no-results {
+                display: block;
+            }
+
+            .print-logo-header {
+                display: inline-block;
+                width: 75px;
+                float: left;
+                margin-bottom: 5px;
+                margin-left: 15px;
+            }
+
+            .delinquentForm {
+                margin-top: 15px;
+                border-bottom: 1px solid #CECFCE;
+                padding-bottom: 5px;
+            }
+
+                .delinquentForm th {
+                    vertical-align: top;
+                    text-align: left;
+                }
+
+            .delinquentResults {
+                margin-top: 5px;
+            }
+
+                .delinquentResults th {
+                    vertical-align: top;
+                    text-align: center;
+                    border-bottom: solid #CCC 1px;
+                    background-color: #DEE5EF;
+                }
+
+                .delinquentResults td {
+                    padding: 5px;
+                }
+
+            .red-row {
+                background-color: #FEE;
+                border: 1px solid #FFB0B0;
+                color: red;
+                padding: 10px;
+            }
+
+            fieldset {
+                border: 3px solid #CECFCE;
+                padding: 2px;
+            }
+
+            .row1, .row1 td {
+                background-color: #FFF;
+                padding: 2px;
+            }
+
+            .row2, .row2 td {
+                background-color: #F0F0F0;
+            }
+
+            .title-header {
+                margin: 0px;
+                text-align: right;
+            }
+
+            .disclaimer {
+                display: block;
+                visibility: visible;
+                font-size: 8px;
+                padding-left: 5px;
+            }
+
+            .top-buffer {
+                margin: 0px 0px 0px 0px;
+            }
+        }
+    </style>
+
+
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-79B10KG3ZY" type="a58fdb0a91ee2e33243cc09e-text/javascript"></script> <script type="a58fdb0a91ee2e33243cc09e-text/javascript"> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-79B10KG3ZY'); </script>
+
+
+
+</head>
+<body>
+    <div class="canvas body-class">
+        <header class="navbar navbar-inverse navbar-fixed-top navbar-default">
+            <div class="container">
+
+
+                <div class="navbar-header">
+                    <a class="logo navbar-btn col-sm-2 text-center desktop float-left" href="/" title="Home">
+                        <img src="/images/cook-seal_3.png" alt="Tax Delinquent Home">
+                    </a>
+                    <div class="site-info">
+
+                        <p class="lead navbar-brand">&nbsp;</p>
+
+                        <a class="name navbar-slogan" href="/" title="Home">Cook County Clerk's Office</a>
+
+                    </div>
+
+                    <div class="social-pane navi">
+                        
+                    </div>
+                </div>
+
+                
+
+
+            </div>
+        </header>
+        <div class="container body-content">
+            
+
+
+
+<div class="row top-buffer">
+    <div class="panel panel-default no-print">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+            <h4 class="panel-title">
+                <a class="accordion-toggle">
+                    Delinquent Property Tax Search
+                </a>
+
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse ">
+
+
+            <div class="message-box" style="border-top:none;">
+
+
+                When delinquent or unpaid taxes are sold by the Cook County Treasurer's office (at an annual sale or scavenger sale), the Clerk's office can provide you with an Estimate Cost of Redemption, detailing the amount necessary to redeem (pay) your taxes and remove the threat of losing your property. The Clerk's office also provides calculations of delinquent taxes owed from prior years when those taxes have not been sold and are either "open" (pending action or review) of "forfeited" (previously offered for sale but not sold). To see if your taxes have been sold, forfeited or open, for prior years (currently defined as 2022 and earlier), please enter your property index number (PIN) in the search box below. For 2023 and 2024 taxes, please visit the Cook County Treasurer's website. <a href="http://www.cookcountytreasurer.com" style="color:blue;text-decoration:underline;">http://www.cookcountytreasurer.com</a>
+            </div>
+
+
+            <div class="panel-body">
+<form action="/" method="post"><input name="__RequestVerificationToken" type="hidden" value="YirVvC5R9sbm-XVladmmHTY5ixZz7MVS7UjaxsSYH2SqjpNClJ-439Zr4nG3tdZeaFC_6Frfktg8ENy-lptORorF-15LBh4xq6BtUREGiaY1" />                    <div class="illustration">
+                        <div class="validation-summary-valid text-danger" data-valmsg-summary="true"><ul><li style="display:none"></li>
+</ul></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Pin">*PIN</label>
+                        <input class="form-control pin" data-val="true" data-val-required="The *PIN field is required." id="Pin" name="Pin" placeholder="XX-XX-XXX-XXX-XXXX" type="text" value="32-19-324-024-0000" />
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Pin" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" value="Search" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>&nbsp;Search</button>
+                        <a href="https://taxdelinquent.cookcountyclerkil.gov/" class="btn btn-default"><span class="glyphicon glyphicon-default"></span>Clear</a>
+                    </div>
+</form>            </div>
+        </div>
+    </div>
+        <div class="row spacer-right-1 no-print clearfix">
+            <div class="btn-group  pull-right">
+                <a href="https://taxdelinquent.cookcountyclerkil.gov/" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>&nbsp;New Search</a>
+                <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; window.print(); return false;" class="btn btn-default" data-cf-modified-a58fdb0a91ee2e33243cc09e-=""><span class="glyphicon glyphicon-print"></span>&nbsp;Print</a>
+            </div>
+        </div>
+        <div class="row spacer-right-1 clearfix">
+            <img src="/images/cook-seal_3.png" class="print-logo-header" />
+            <div class="text-right pull-right">
+                <h4>32-19-324-024-0000</h4>
+                <h6>Data as of 2/19/2026</h6>
+            </div>
+        </div>
+            <div class="panel panel-primary panel-color">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle">
+                            Sold Taxes
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in">
+                    <div class="panel-body table-container table-responsive">
+                        <table class="table-filter table table-condensed table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tax Sale <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; return OpenHelp(event,'taxSaleHelp');" data-cf-modified-a58fdb0a91ee2e33243cc09e-="">?</a></th>
+                                    <th>From Year - To Year <br /> (Scav Sale Only)</th>
+                                    <th>Status <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; return OpenHelp(event,'taxSaleStatusHelp');" data-cf-modified-a58fdb0a91ee2e33243cc09e-="">?</a></th>
+                                    <th>Status Document<br /> Number <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; return OpenHelp(event,'documentNumberHelp');" data-cf-modified-a58fdb0a91ee2e33243cc09e-="">?</a></th>
+                                    <th>Date</th>
+                                    <th>Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                        <td class="row1" style="text-align:left;">2021 Annual Sale</td>
+                                        <td class="row1" style="text-align:center;"></td>
+                                        <td class="row1 popup" style="text-align:center;">Sold</td>
+                                        <td class="row1 statusdocumentnumber" style="text-align:center;"> </td>
+                                        <td class="row1" style="text-align:center;">1/9/2024 </td>
+                                        <td class="row1" style="text-align:center;">
+                                            
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <p class="red-row" style="margin:2px;display:none;">
+                        The tax sale noted "URGENT" is within six months of the last day for redemption, as currently shown in the Clerk's records.
+                        <br />
+                        Please contact our office at (312) 603-5645.
+                    </p>
+
+                        <div class="row " style="font-style:italic;padding-left:20px;"><a href="https://www.cookcountyclerk.com/service/estimate-redemption" target="_blank" style="font-size:12px;font-weight:normal;text-decoration:underline;">Click here for information on ordering a calculation of taxes that have been sold.</a></div>
+                </div>
+
+            </div>
+            <div class="panel panel-primary panel-color">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle">
+                            Delinquent Taxes
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse in">
+                    <div class="panel-body table-container table-responsive">
+                        <table class="table-filter table table-condensed table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tax Year</th>
+                                    <th>Status <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; return OpenHelp(event,'taxStatusHelp');" data-cf-modified-a58fdb0a91ee2e33243cc09e-="">?</a></th>
+                                    <th>Forfeit<br />Date</th>
+                                    <th>1st  Installment<br />Tax Balance</th>
+                                    <th>2nd  Installment<br />Tax Balance</th>
+                                    <th>Type</th>
+                                    <th>Warrant<br />Year <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; return OpenHelp(event,'warrantYearHelp');" data-cf-modified-a58fdb0a91ee2e33243cc09e-="">?</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                        <td class="row1" style="text-align:center;">2021</td>
+                                        <td class="row1 popup" style="text-align:center;">
+                                            Open
+                                        </td>
+                                        <td class="row1" style="text-align:center;"></td>
+                                        <td class="row1" style="text-align:center;">$83.69
+                                        <td class="row1" style="text-align:center;">$79.29
+                                        <td class="row1 backtax" style="text-align:center;">
+                                        <td class="row1 warrantyear" style="text-align:center;">
+                                    </tr>
+                                    <tr>
+                                        <td class="row1" style="text-align:center;">2020</td>
+                                        <td class="row1 popup" style="text-align:center;">
+                                            Open
+                                        </td>
+                                        <td class="row1" style="text-align:center;"></td>
+                                        <td class="row1" style="text-align:center;">
+                                        <td class="row1" style="text-align:center;">$72.95
+                                        <td class="row1 backtax" style="text-align:center;">
+                                        <td class="row1 warrantyear" style="text-align:center;">
+                                    </tr>
+                                    <tr>
+                                        <td class="row1" style="text-align:center;">2016</td>
+                                        <td class="row1 popup" style="text-align:center;">
+                                            Open
+                                        </td>
+                                        <td class="row1" style="text-align:center;">5/4/2018</td>
+                                        <td class="row1" style="text-align:center;">$70.02
+                                        <td class="row1" style="text-align:center;">$59.83
+                                        <td class="row1 backtax" style="text-align:center;">
+                                        <td class="row1 warrantyear" style="text-align:center;">
+                                    </tr>
+                                    <tr>
+                                        <td class="row1" style="text-align:center;">2015</td>
+                                        <td class="row1 popup" style="text-align:center;">
+                                            Open
+                                        </td>
+                                        <td class="row1" style="text-align:center;"></td>
+                                        <td class="row1" style="text-align:center;">
+                                        <td class="row1" style="text-align:center;">$40.53
+                                        <td class="row1 backtax" style="text-align:center;">
+                                        <td class="row1 warrantyear" style="text-align:center;">
+                                    </tr>
+                                    <tr>
+                                        <td class="row1" style="text-align:center;">2013</td>
+                                        <td class="row1 popup" style="text-align:center;">
+                                            Open
+                                        </td>
+                                        <td class="row1" style="text-align:center;">8/3/2015</td>
+                                        <td class="row1" style="text-align:center;">$59.75
+                                        <td class="row1" style="text-align:center;">$52.03
+                                        <td class="row1 backtax" style="text-align:center;">
+                                        <td class="row1 warrantyear" style="text-align:center;">
+                                    </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr style="border-top:2px solid #000;font-weight:bold; padding:5px;">
+                                    <td class="row2 footer" colspan="2">Total Tax Balance Due*</td>
+                                    <td class="row2 footer"></td>
+                                    <td class="row2 footer">$213.46</td>
+                                    <td class="row2 footer">$304.63</td>
+                                    <td class="row2 footer"></td>
+                                    <td class="row2 footer"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <div class="row " style="font-style:italic;padding-left:20px;">*Tax Balance Due does not include penalties. <br /><a href="https://www.cookcountyclerk.com/service/forfeited-or-open-taxes" target="_blank" style="font-size:12px;font-weight:normal;text-decoration:underline;">Click here for information on ordering a calculation of taxes that have been forfeited or are open.</a></div>
+                    </div>
+                </div>
+            </div>
+
+    <div class="message-box" style="margin:20px;">
+        <p><strong>Data provided reflects only delinquencies for general taxes billed under this property index number.&nbsp;Additional delinquencies may exist for this property index number. For information regarding Special Assessments, please contact our office. Additional delinquencies may exist for this property if parcels have been voided as part of a parcel reconfiguration, such as a parcel division, subdivision or consolidation.</strong></p>
+        <p>The data provided herein is for public information purposes only. No warranties of any kind, express or implied, as to the accuracy or completeness of the information contained herein, as to its interpretation, as to any omissions therefrom, as to its freedom from contamination from computer viruses and malware, or as to its fitness for any particular purpose.</p>
+        <p>Users hereof are specifically advised and cautioned that the information contained herein does not constitute an official record. Although it is periodically updated, this information may not reflect the data currently on file in the business records of the Cook County Clerk’s Office. The Cook County Clerk assumes no liability for any damages incurred, whether directly or indirectly, actual, incidental, punitive or consequential, as a result of any errors, omissions or discrepancies in any information contained herein or as a result of any person’s use of such information. Any use of the information contained herein shall be at the sole risk of the user.</p>
+    </div>
+
+</div>
+
+
+<div class="helpContainer" id="taxSaleHelp" style="display: none;">
+    <div class="helpHeader">
+    </div>
+    <div class="helpBody">
+        <div class="helpClose">
+            <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; return CloseHelp('taxSaleHelp');" data-cf-modified-a58fdb0a91ee2e33243cc09e-="">x</a>
+        </div>
+        <h3>
+            <span id="Span4"></span>
+        </h3>
+        <p>
+            Unpaid taxes sold at an Annual or Scavenger Sale conducted by the Cook County Treasurer.
+        </p>
+    </div>
+    <div class="helpFooter">
+    </div>
+</div>
+<div class="helpContainer" id="taxSaleStatusHelp" style="display: none;">
+    <div class="helpHeader">
+    </div>
+    <div class="helpBody">
+        <div class="helpClose">
+            <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; return CloseHelp('taxSaleStatusHelp');" data-cf-modified-a58fdb0a91ee2e33243cc09e-="">x</a>
+        </div>
+        <h3>
+            <span id="Span1"></span>
+        </h3>
+        <p>
+            <b>Sold:</b> Delinquent property taxes sold at a tax sale.
+        </p>
+        <p>
+            <b>Redeemed:</b> Payment made to the Clerk\'s Office by owner, of sold taxes, costs, and interest, following a tax sale.
+        </p>
+        <p>
+            <b>Vacated:</b> Taxes have been sold but declared "vacated" by the Circuit Court. Taxes may be due.
+        </p>
+        <p>
+            <b>Deeded:</b> Redemption period has expired and deed has been transferred per court order.
+        </p>
+    </div>
+    <div class="helpFooter">
+    </div>
+</div>
+<div class="helpContainer" id="documentNumberHelp" style="display: none;">
+    <div class="helpHeader">
+    </div>
+    <div class="helpBody">
+        <div class="helpClose">
+            <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; return CloseHelp('documentNumberHelp');" data-cf-modified-a58fdb0a91ee2e33243cc09e-="">x</a>
+        </div>
+        <h3>
+            <span id="Span3"></span>
+        </h3>
+        <p>
+            Document Number referencing a redemption receipt, tax deed number or sale in error court order.
+        </p>
+    </div>
+    <div class="helpFooter">
+    </div>
+</div>
+<div class="helpContainer" id="taxStatusHelp" style="display: none;">
+    <div class="helpHeader">
+    </div>
+    <div class="helpBody">
+        <div class="helpClose">
+            <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; return CloseHelp('taxStatusHelp');" data-cf-modified-a58fdb0a91ee2e33243cc09e-="">x</a>
+        </div>
+        <h3>
+            <span id="ctl00_ctl15_g_989af85b_2f18_4e37_9d93_f2d31f2e2e7f_ctl00_lblAddresshelpheader"></span>
+        </h3>
+        <p>
+            <b>Open:</b> Delinquent or unpaid taxes from a prior year.
+        </p>
+        <p>
+            <b>Forfeited:</b> Delinquent taxes offered at an annual sale, not sold and remain unpaid.
+        </p>
+    </div>
+    <div class="helpFooter">
+    </div>
+</div>
+<div class="helpContainer" id="warrantYearHelp" style="display: none;">
+    <div class="helpHeader">
+    </div>
+    <div class="helpBody">
+        <div class="helpClose">
+            <a href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; return CloseHelp('warrantYearHelp');" data-cf-modified-a58fdb0a91ee2e33243cc09e-="">x</a>
+        </div>
+        <h3>
+            <span id="Span2"></span>
+        </h3>
+        <p>
+            The tax year the back tax was billed.
+        </p>
+    </div>
+    <div class="helpFooter">
+    </div>
+</div>
+
+
+            <hr />
+            <footer>
+                <p>&copy; Copyright 2026 Cook County Clerk's Office. All Rights Reserved.</p>
+            </footer>
+        </div>
+
+        <script src="/bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1" type="a58fdb0a91ee2e33243cc09e-text/javascript"></script>
+
+        <script src="/bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1" type="a58fdb0a91ee2e33243cc09e-text/javascript"></script>
+
+        <script src="/bundles/maskedinput?v=nfJBIGDFKltcN1hyxNuyZkFvqLoqRmwNPmmIT2wLGEk1" type="a58fdb0a91ee2e33243cc09e-text/javascript"></script>
+
+        
+    <script src="/bundles/jqueryval?v=hEGG8cMxk9p0ncdRUOJ-CnKN7NezhnPnWIvn6REucZo1" type="a58fdb0a91ee2e33243cc09e-text/javascript"></script>
+
+    <script src="/Scripts/help.js" type="a58fdb0a91ee2e33243cc09e-text/javascript"></script>
+    <script type="a58fdb0a91ee2e33243cc09e-text/javascript">
+        $(document).ready(function () {
+            $('.pin').mask("00-00-000-000-0000");
+            $('td.backtax').mouseover(function (event) {
+                var text = '';
+                var status = $(this).html().trim();
+                if (status == 'Backtax') {
+                    text = 'Omitted assessment tax billed in a subsequent warrant year.';
+                    createTooltip(event, text);
+                }
+            }).mouseout(function () {
+                hideTooltip();
+            });
+
+
+            function createTooltip(event, text) {
+                $('<div class="tooltip">' + text + '</div>').appendTo('body');
+                positionTooltip(event);
+            };
+
+            function positionTooltip(event) {
+                var tPosX = event.pageX + 5;
+                var tPosY = event.pageY;
+                $('div.tooltip').css({ 'position': 'absolute', 'top': tPosY, 'left': tPosX });
+            };
+
+            function hideTooltip() {
+                if ($('div.tooltip')) {
+                    $('div.tooltip').remove();
+                }
+            }
+
+
+            function popup(data) {
+                var mywindow = window.open('', 'to_print', 'height=600,width=800');
+                var html = '<html><head><title></title>' +
+                           '</head><body onload="window.focus(); window.print(); window.close()">' +
+                           data +
+                           '</body></html>';
+                mywindow.document.write(html);
+                mywindow.document.close();
+                return true;
+            }
+
+        });
+
+    </script>
+
+
+
+    </div>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="a58fdb0a91ee2e33243cc09e-|49" defer></script></body>
+</html>

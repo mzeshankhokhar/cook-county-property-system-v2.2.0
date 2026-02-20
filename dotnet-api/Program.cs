@@ -50,6 +50,10 @@ builder.Services.AddHttpClient("GIS", client =>
 builder.Services.AddScoped<ICookCountyProxyService, CookCountyProxyService>();
 builder.Services.AddScoped<IPropertySummaryService, PropertySummaryService>();
 builder.Services.AddScoped<ITaxPortalHtmlParser, TaxPortalHtmlParser>();
+builder.Services.AddScoped<IClerkHtmlParser, ClerkHtmlParser>();
+builder.Services.AddScoped<IRecorderHtmlParser, RecorderHtmlParser>();
+builder.Services.AddScoped<IAssessorHtmlParser, AssessorHtmlParser>();
+builder.Services.AddScoped<ITreasurerHtmlParser, TreasurerHtmlParser>();
 
 // Add CORS for frontend integration
 builder.Services.AddCors(options =>
